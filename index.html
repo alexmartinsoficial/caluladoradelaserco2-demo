@@ -3,102 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Ganhos - Laser CO₂ Reversi</title>
+    <title>Calculadora de Ganhos - Laser CO₂ Ultrapulsado</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        
         input[type="range"] {
             -webkit-appearance: none;
             appearance: none;
-            background: transparent;
-            cursor: pointer;
-        }
-        
-        input[type="range"]::-webkit-slider-track {
-            background: rgb(233, 213, 255);
-            height: 0.5rem;
-            border-radius: 0.5rem;
-        }
-        
-        input[type="range"]::-moz-range-track {
-            background: rgb(233, 213, 255);
-            height: 0.5rem;
-            border-radius: 0.5rem;
+            width: 100%;
+            height: 12px;
+            border-radius: 6px;
+            background: #DDD6FE;
+            outline: none;
         }
         
         input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            height: 1.25rem;
-            width: 1.25rem;
-            background-color: rgb(147, 51, 234);
+            width: 24px;
+            height: 24px;
+            background: #7C3AED;
+            cursor: pointer;
             border-radius: 50%;
-            border: none;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
         }
         
         input[type="range"]::-moz-range-thumb {
-            height: 1.25rem;
-            width: 1.25rem;
-            background-color: rgb(147, 51, 234);
+            width: 24px;
+            height: 24px;
+            background: #7C3AED;
+            cursor: pointer;
             border-radius: 50%;
-            border: none;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
         }
         
         .hidden {
             display: none;
         }
-
-        .countdown-pulse {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: .8;
-            }
-        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-purple-50 to-blue-50 min-h-screen p-6">
     <div class="max-w-6xl mx-auto">
-        <!-- Contador Regressivo -->
-        <div class="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl shadow-2xl p-6 mb-8 text-white text-center countdown-pulse">
-            <div class="text-sm font-semibold mb-2 uppercase tracking-wide">⏰ Oferta de Lançamento Limitada</div>
-            <div class="text-2xl md:text-3xl font-bold mb-3">Termina em:</div>
-            <div class="grid grid-cols-4 gap-2 md:gap-4 max-w-xl mx-auto">
-                <div class="bg-white/20 rounded-lg p-3 backdrop-blur-sm">
-                    <div id="dias" class="text-3xl md:text-4xl font-bold">00</div>
-                    <div class="text-xs md:text-sm uppercase">Dias</div>
-                </div>
-                <div class="bg-white/20 rounded-lg p-3 backdrop-blur-sm">
-                    <div id="horas" class="text-3xl md:text-4xl font-bold">00</div>
-                    <div class="text-xs md:text-sm uppercase">Horas</div>
-                </div>
-                <div class="bg-white/20 rounded-lg p-3 backdrop-blur-sm">
-                    <div id="minutos" class="text-3xl md:text-4xl font-bold">00</div>
-                    <div class="text-xs md:text-sm uppercase">Min</div>
-                </div>
-                <div class="bg-white/20 rounded-lg p-3 backdrop-blur-sm">
-                    <div id="segundos" class="text-3xl md:text-4xl font-bold">00</div>
-                    <div class="text-xs md:text-sm uppercase">Seg</div>
-                </div>
-            </div>
-            <div class="text-sm mt-4 text-red-100">Válido até 24/10/2025 às 23:59</div>
-        </div>
-
         <!-- Header -->
         <div class="text-center mb-8">
-            <h1 class="text-4xl font-bold text-gray-800 mb-2">
-                Calculadora de Ganhos
-            </h1>
-            <p class="text-xl text-purple-700 font-semibold mb-1">
-                Laser CO₂ Ultrapulsado com Microcoring
-            </p>
-            <p class="text-lg text-gray-600">
-                Reversi - Fismatek
-            </p>
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">Calculadora de Ganhos</h1>
+            <p class="text-xl text-purple-700 font-semibold mb-1">Laser CO₂ Ultrapulsado com Microcoring</p>
+            <p class="text-lg text-gray-600">Reversi - Fismatek</p>
         </div>
 
         <!-- Simulador -->
@@ -112,23 +67,15 @@
 
             <!-- Categoria -->
             <div class="mb-6">
-                <label class="block text-sm font-semibold text-gray-700 mb-3">
-                    Selecione a categoria predominante:
-                </label>
+                <label class="block text-sm font-semibold text-gray-700 mb-3">Selecione a categoria predominante:</label>
                 <div class="grid grid-cols-3 gap-3">
-                    <button id="btnPopular" class="py-3 px-4 rounded-lg font-semibold transition-all bg-blue-100 text-blue-700 hover:bg-blue-200">
-                        Popular
-                    </button>
-                    <button id="btnPremium" class="py-3 px-4 rounded-lg font-semibold transition-all bg-purple-600 text-white shadow-lg scale-105">
-                        Premium
-                    </button>
-                    <button id="btnLuxo" class="py-3 px-4 rounded-lg font-semibold transition-all bg-amber-100 text-amber-700 hover:bg-amber-200">
-                        Luxo
-                    </button>
+                    <button onclick="selecionarCategoria('popular')" id="btnPopular" class="py-3 px-4 rounded-lg font-semibold transition-all bg-blue-100 text-blue-700 hover:bg-blue-200">Popular</button>
+                    <button onclick="selecionarCategoria('premium')" id="btnPremium" class="py-3 px-4 rounded-lg font-semibold transition-all bg-purple-600 text-white shadow-lg scale-105">Premium</button>
+                    <button onclick="selecionarCategoria('luxo')" id="btnLuxo" class="py-3 px-4 rounded-lg font-semibold transition-all bg-amber-100 text-amber-700 hover:bg-amber-200">Luxo</button>
                 </div>
             </div>
 
-            <!-- Exemplo Facial Completo -->
+            <!-- Exemplos -->
             <div class="mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
                 <p class="text-xs text-gray-500 mb-2">Exemplos de categoria - Facial completo:</p>
                 <div class="grid grid-cols-3 gap-3 text-center">
@@ -152,7 +99,7 @@
 
             <!-- Botão Tabela -->
             <div class="mb-6 text-center">
-                <button id="btnMostrarTabela" class="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-2 px-5 rounded-lg transition-all border border-gray-300">
+                <button onclick="toggleTabela()" id="btnTabela" class="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-2 px-5 rounded-lg transition-all border border-gray-300">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                     </svg>
@@ -160,8 +107,8 @@
                 </button>
             </div>
 
-            <!-- Tabela (hidden por padrão) -->
-            <div id="tabelaPrecos" class="hidden mb-6 p-6 bg-gray-50 rounded-lg border border-gray-200">
+            <!-- Tabela (colapsável) -->
+            <div id="boxTabela" class="hidden mb-6 p-6 bg-gray-50 rounded-lg border border-gray-200">
                 <h3 class="text-xl font-bold text-gray-800 mb-4">Tabela de Sugestão de Preços</h3>
                 
                 <div class="mb-6">
@@ -178,17 +125,17 @@
                             </thead>
                             <tbody class="divide-y">
                                 <tr><td class="p-3">Área da boca</td><td class="text-right p-3">R$ 900</td><td class="text-right p-3">R$ 1.200</td><td class="text-right p-3">R$ 1.600</td></tr>
-                                <tr class="bg-gray-50"><td class="p-3">Pescoço</td><td class="text-right p-3">R$ 1.000</td><td class="text-right p-3">R$ 2.500</td><td class="text-right p-3">R$ 4.000</td></tr>
+                                <tr class="bg-white"><td class="p-3">Pescoço</td><td class="text-right p-3">R$ 1.000</td><td class="text-right p-3">R$ 2.500</td><td class="text-right p-3">R$ 4.000</td></tr>
                                 <tr><td class="p-3">Mãos</td><td class="text-right p-3">R$ 1.100</td><td class="text-right p-3">R$ 1.500</td><td class="text-right p-3">R$ 1.900</td></tr>
-                                <tr class="bg-gray-50"><td class="p-3">Colo</td><td class="text-right p-3">R$ 1.500</td><td class="text-right p-3">R$ 1.900</td><td class="text-right p-3">R$ 2.300</td></tr>
+                                <tr class="bg-white"><td class="p-3">Colo</td><td class="text-right p-3">R$ 1.500</td><td class="text-right p-3">R$ 1.900</td><td class="text-right p-3">R$ 2.300</td></tr>
                                 <tr><td class="p-3">Bumbum de Pêssego</td><td class="text-right p-3">R$ 1.700</td><td class="text-right p-3">R$ 2.300</td><td class="text-right p-3">R$ 3.000</td></tr>
-                                <tr class="bg-gray-50"><td class="p-3">Olhar Diamante</td><td class="text-right p-3">R$ 1.800</td><td class="text-right p-3">R$ 2.500</td><td class="text-right p-3">R$ 5.000</td></tr>
+                                <tr class="bg-white"><td class="p-3">Olhar Diamante</td><td class="text-right p-3">R$ 1.800</td><td class="text-right p-3">R$ 2.500</td><td class="text-right p-3">R$ 5.000</td></tr>
                                 <tr><td class="p-3 font-semibold">Face Sublime (Facial completo)</td><td class="text-right p-3 font-semibold">R$ 2.000</td><td class="text-right p-3 font-semibold">R$ 3.000</td><td class="text-right p-3 font-semibold">R$ 5.000</td></tr>
-                                <tr class="bg-gray-50"><td class="p-3">Lift Premium</td><td class="text-right p-3">R$ 3.000</td><td class="text-right p-3">R$ 5.500</td><td class="text-right p-3">R$ 8.000</td></tr>
-                                <tr><td class="p-3">Elegance Total</td><td class="text-right p-3">R$ 4.000</td><td class="text-right p-3">R$ 7.000</td><td class="text-right p-3">R$ 10.000</td></tr>
-                                <tr class="bg-gray-50"><td class="p-3">Skin Perfect</td><td class="text-right p-3">R$ 4.200</td><td class="text-right p-3">R$ 7.000</td><td class="text-right p-3">R$ 10.000</td></tr>
+                                <tr class="bg-white"><td class="p-3">Lift Premium (Face + pescoço)</td><td class="text-right p-3">R$ 3.000</td><td class="text-right p-3">R$ 5.500</td><td class="text-right p-3">R$ 8.000</td></tr>
+                                <tr><td class="p-3">Elegance Total (Face + pescoço + colo)</td><td class="text-right p-3">R$ 4.000</td><td class="text-right p-3">R$ 7.000</td><td class="text-right p-3">R$ 10.000</td></tr>
+                                <tr class="bg-white"><td class="p-3">Skin Perfect (Cicatrizes e estrias)</td><td class="text-right p-3">R$ 4.200</td><td class="text-right p-3">R$ 7.000</td><td class="text-right p-3">R$ 10.000</td></tr>
                                 <tr><td class="p-3">Abdômen Platinum</td><td class="text-right p-3">R$ 4.000</td><td class="text-right p-3">R$ 6.000</td><td class="text-right p-3">R$ 12.000</td></tr>
-                                <tr class="bg-gray-50"><td class="p-3 font-semibold">Resurfacing</td><td class="text-right p-3 font-semibold">R$ 5.000</td><td class="text-right p-3 font-semibold">R$ 7.000</td><td class="text-right p-3 font-semibold">R$ 10.000</td></tr>
+                                <tr class="bg-white"><td class="p-3 font-semibold">Resurfacing (Laser facial profundo)</td><td class="text-right p-3 font-semibold">R$ 5.000</td><td class="text-right p-3 font-semibold">R$ 7.000</td><td class="text-right p-3 font-semibold">R$ 10.000</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -208,26 +155,26 @@
                             </thead>
                             <tbody class="divide-y">
                                 <tr><td class="p-3">Tratamento de lesões benignas pequenas</td><td class="text-right p-3">R$ 800</td><td class="text-right p-3">R$ 1.500</td><td class="text-right p-3">R$ 2.500</td></tr>
-                                <tr class="bg-gray-50"><td class="p-3">Ressecção de pintas / manchas</td><td class="text-right p-3">R$ 800</td><td class="text-right p-3">R$ 1.200</td><td class="text-right p-3">R$ 2.000</td></tr>
-                                <tr><td class="p-3">Remoção de siringomas e cistos</td><td class="text-right p-3">R$ 1.500</td><td class="text-right p-3">R$ 2.000</td><td class="text-right p-3">R$ 3.000</td></tr>
-                                <tr class="bg-gray-50"><td class="p-3">Exérese de xantelasmas</td><td class="text-right p-3">R$ 2.500</td><td class="text-right p-3">R$ 4.000</td><td class="text-right p-3">R$ 6.000</td></tr>
-                                <tr><td class="p-3">Excisão de cicatrizes</td><td class="text-right p-3">R$ 2.500</td><td class="text-right p-3">R$ 4.000</td><td class="text-right p-3">R$ 6.000</td></tr>
-                                <tr class="bg-gray-50"><td class="p-3">Vaporização de quelóides</td><td class="text-right p-3">R$ 2.500</td><td class="text-right p-3">R$ 4.000</td><td class="text-right p-3">R$ 6.000</td></tr>
-                                <tr><td class="p-3">Laser CO₂ intravaginal</td><td class="text-right p-3">R$ 5.000</td><td class="text-right p-3">R$ 8.000</td><td class="text-right p-3">R$ 12.000</td></tr>
-                                <tr class="bg-gray-50"><td class="p-3">Blefaroplastia</td><td class="text-right p-3">R$ 6.000</td><td class="text-right p-3">R$ 8.500</td><td class="text-right p-3">R$ 12.000</td></tr>
-                                <tr><td class="p-3">Ninfoplastia</td><td class="text-right p-3">R$ 8.000</td><td class="text-right p-3">R$ 12.000</td><td class="text-right p-3">R$ 20.000</td></tr>
+                                <tr class="bg-white"><td class="p-3">Ressecção de pintas / manchas elevadas</td><td class="text-right p-3">R$ 800</td><td class="text-right p-3">R$ 1.200</td><td class="text-right p-3">R$ 2.000</td></tr>
+                                <tr><td class="p-3">Remoção de siringomas, mílias e cistos faciais</td><td class="text-right p-3">R$ 1.500</td><td class="text-right p-3">R$ 2.000</td><td class="text-right p-3">R$ 3.000</td></tr>
+                                <tr class="bg-white"><td class="p-3">Exérese de xantelasmas</td><td class="text-right p-3">R$ 2.500</td><td class="text-right p-3">R$ 4.000</td><td class="text-right p-3">R$ 6.000</td></tr>
+                                <tr><td class="p-3">Excisão de cicatrizes inestéticas</td><td class="text-right p-3">R$ 2.500</td><td class="text-right p-3">R$ 4.000</td><td class="text-right p-3">R$ 6.000</td></tr>
+                                <tr class="bg-white"><td class="p-3">Vaporização de quelóides / cicatrizes hipertróficas</td><td class="text-right p-3">R$ 2.500</td><td class="text-right p-3">R$ 4.000</td><td class="text-right p-3">R$ 6.000</td></tr>
+                                <tr><td class="p-3">Laser de CO₂ intravaginal / rejuvenescimento íntimo</td><td class="text-right p-3">R$ 5.000</td><td class="text-right p-3">R$ 8.000</td><td class="text-right p-3">R$ 12.000</td></tr>
+                                <tr class="bg-white"><td class="p-3">Blefaroplastia</td><td class="text-right p-3">R$ 6.000</td><td class="text-right p-3">R$ 8.500</td><td class="text-right p-3">R$ 12.000</td></tr>
+                                <tr><td class="p-3">Ninfoplastia (cirurgia íntima feminina)</td><td class="text-right p-3">R$ 8.000</td><td class="text-right p-3">R$ 12.000</td><td class="text-right p-3">R$ 20.000</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
 
-            <!-- Quantidade de Procedimentos -->
+            <!-- Sliders -->
             <div class="mb-6">
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Quantidade de procedimentos por mês: <span id="txtQtdProc" class="text-purple-600 text-lg">20</span>
+                    Quantidade de procedimentos por mês: <span class="text-purple-600 text-lg" id="txtQtd">20</span>
                 </label>
-                <input type="range" id="sliderProc" min="5" max="100" value="20" class="w-full">
+                <input type="range" min="5" max="100" step="1" value="20" id="sliderQtd" oninput="atualizarQtd(this.value)">
                 <div class="flex justify-between text-xs text-gray-500 mt-1">
                     <span>5 proc.</span>
                     <span>50 proc.</span>
@@ -235,30 +182,27 @@
                 </div>
             </div>
 
-            <!-- Mix de Procedimentos -->
             <div class="mb-6">
-                <label class="block text-sm font-semibold text-gray-700 mb-3">
-                    Distribuição dos procedimentos (%):
-                </label>
+                <label class="block text-sm font-semibold text-gray-700 mb-3">Distribuição dos procedimentos (%):</label>
                 <div class="space-y-4">
                     <div>
                         <div class="flex justify-between mb-1">
                             <span class="text-sm text-gray-600">Facial completo e similares</span>
-                            <span id="txtPercFacial" class="text-sm font-semibold text-purple-600">40%</span>
+                            <span class="text-sm font-semibold text-purple-600" id="percFacial">40%</span>
                         </div>
-                        <input type="range" id="sliderFacial" min="0" max="100" value="40" class="w-full">
+                        <input type="range" min="0" max="100" step="1" value="40" id="sliderFacial" oninput="atualizarMix('facial', this.value)">
                     </div>
                     <div>
                         <div class="flex justify-between mb-1">
                             <span class="text-sm text-gray-600">Procedimentos cirúrgicos</span>
-                            <span id="txtPercCirurgicos" class="text-sm font-semibold text-blue-600">30%</span>
+                            <span class="text-sm font-semibold text-blue-600" id="percCirurgicos">30%</span>
                         </div>
-                        <input type="range" id="sliderCirurgicos" min="0" max="100" value="30" class="w-full">
+                        <input type="range" min="0" max="100" step="1" value="30" id="sliderCirurgicos" oninput="atualizarMix('cirurgicos', this.value)">
                     </div>
                     <div>
                         <div class="flex justify-between mb-1">
                             <span class="text-sm text-gray-600">Outros procedimentos</span>
-                            <span id="txtPercOutros" class="text-sm font-semibold text-green-600">30%</span>
+                            <span class="text-sm font-semibold text-green-600" id="percOutros">30%</span>
                         </div>
                         <div class="w-full h-2 bg-green-200 rounded-lg"></div>
                     </div>
@@ -270,66 +214,53 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             <div class="bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl shadow-lg p-6 text-white">
                 <div class="flex items-center gap-2 mb-2">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                    </svg>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                     <h3 class="text-lg font-semibold">Faturamento Mensal</h3>
                 </div>
-                <div id="txtFaturamentoMensal" class="text-4xl font-bold mb-2">R$ 0</div>
-                <div class="text-purple-200 text-sm">
-                    Baseado em <span id="txtBaseProc">20</span> procedimentos/mês
-                </div>
+                <div class="text-4xl font-bold mb-2" id="txtMensal">R$ 0</div>
+                <div class="text-purple-200 text-sm">Baseado em <span id="txtBaseMes">20</span> procedimentos/mês</div>
             </div>
 
             <div class="bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl shadow-lg p-6 text-white">
                 <div class="flex items-center gap-2 mb-2">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                    </svg>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
                     <h3 class="text-lg font-semibold">Projeção Anual</h3>
                 </div>
-                <div id="txtFaturamentoAnual" class="text-4xl font-bold mb-2">R$ 0</div>
-                <div class="text-amber-200 text-sm">
-                    Potencial de faturamento em 12 meses
-                </div>
+                <div class="text-4xl font-bold mb-2" id="txtAnual">R$ 0</div>
+                <div class="text-amber-200 text-sm">Potencial de faturamento em 12 meses</div>
             </div>
 
             <div class="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl shadow-lg p-6 text-white">
                 <div class="flex items-center gap-2 mb-2">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     <h3 class="text-lg font-semibold">ROI Estimado</h3>
                 </div>
-                <div id="txtROI" class="text-4xl font-bold mb-2">0 meses</div>
-                <div class="text-green-200 text-sm">
-                    Tempo para retorno do investimento
-                </div>
+                <div class="text-4xl font-bold mb-2" id="txtROI">0 meses</div>
+                <div class="text-green-200 text-sm">Tempo para retorno do investimento</div>
             </div>
         </div>
 
-        <!-- Investimento -->
+        <!-- Info Investimento -->
         <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
-            <h3 class="text-xl font-bold text-gray-800 mb-4">💰 Condições de Investimento</h3>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">💰 Informações do Investimento</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="p-4 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg border-2 border-purple-300">
-                    <div class="text-sm text-purple-700 font-semibold mb-2">Promoção de Lançamento</div>
-                    <div class="text-lg text-gray-500 line-through mb-1">De R$ 249.900,00</div>
-                    <div class="text-3xl font-bold text-purple-700">Por R$ 229.900,00</div>
+                    <div class="text-sm text-purple-700 font-semibold mb-2">Valor no Pré-Lançamento</div>
+                    <div class="text-lg text-gray-500 line-through mb-1">De R$ 249.000,00</div>
+                    <div class="text-3xl font-bold text-purple-700">Por R$ 199.900</div>
                 </div>
                 <div class="p-4 bg-gray-50 rounded-lg">
                     <div class="text-sm text-gray-600 mb-1">Entrada</div>
-                    <div class="text-3xl font-bold text-gray-800">R$ 10.000,00</div>
+                    <div class="text-2xl font-bold text-gray-800">R$ 10.000</div>
                 </div>
                 <div class="p-4 bg-gray-50 rounded-lg">
-                    <div class="text-sm text-gray-600 mb-1">Parcela Mensal</div>
-                    <div class="text-3xl font-bold text-gray-800">R$ 6.108,33</div>
-                    <div class="text-xs text-purple-600 font-semibold mt-2">36x sem juros</div>
+                    <div class="text-sm text-gray-600 mb-1">Parcela Mensal (36x sem juros)</div>
+                    <div class="text-2xl font-bold text-gray-800">R$ 5.275</div>
                 </div>
             </div>
             <div class="mt-4 p-4 bg-green-50 rounded-lg border-2 border-green-200">
                 <div class="text-sm font-semibold text-green-700 mb-1">Lucro Líquido Mensal (após parcela)</div>
-                <div id="txtLucroMensal" class="text-3xl font-bold text-green-700">R$ 0</div>
+                <div class="text-3xl font-bold text-green-700" id="txtLucro">R$ 0</div>
             </div>
         </div>
 
@@ -339,47 +270,178 @@
             <div class="space-y-3">
                 <div class="flex justify-between items-center p-3 bg-purple-50 rounded-lg">
                     <span class="font-semibold text-gray-700">Facial completo e similares</span>
-                    <span id="txtDetalheFacial" class="text-purple-700 font-bold">R$ 0/mês</span>
+                    <span class="text-purple-700 font-bold" id="txtDetFacial">R$ 0/mês</span>
                 </div>
                 <div class="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
                     <span class="font-semibold text-gray-700">Procedimentos cirúrgicos</span>
-                    <span id="txtDetalheCirurgicos" class="text-blue-700 font-bold">R$ 0/mês</span>
+                    <span class="text-blue-700 font-bold" id="txtDetCirurgicos">R$ 0/mês</span>
                 </div>
                 <div class="flex justify-between items-center p-3 bg-green-50 rounded-lg">
                     <span class="font-semibold text-gray-700">Outros procedimentos</span>
-                    <span id="txtDetalheOutros" class="text-green-700 font-bold">R$ 0/mês</span>
+                    <span class="text-green-700 font-bold" id="txtDetOutros">R$ 0/mês</span>
                 </div>
             </div>
         </div>
 
-        <!-- CTA -->
-        <div class="bg-gradient-to-br from-purple-600 to-purple-800 rounded-3xl shadow-2xl p-8 text-white text-center mb-6">
-            <h2 class="text-3xl font-bold mb-4">
-                🎯 Agende uma Demonstração Online
-            </h2>
-            <p class="text-xl mb-6 text-purple-100">
-                Veja o equipamento em funcionamento e tire todas as suas dúvidas
-            </p>
+        <!-- Footer -->
+        <div class="text-center mt-8 text-gray-600 text-sm mb-6">
+            <p>* Valores estimados baseados na tabela de preços sugerida</p>
+            <p>Os resultados reais podem variar conforme demanda e mix de procedimentos</p>
+        </div>
+
+        <!-- CTA Final -->
+        <div class="bg-gradient-to-br from-purple-600 to-purple-800 rounded-3xl shadow-2xl p-8 text-white text-center">
+            <h2 class="text-3xl font-bold mb-4">🎯 Garanta seu aparelho na condição pré-lançamento</h2>
+            <p class="text-xl mb-6 text-purple-100">Em 36x sem juros</p>
             
-            <div class="flex justify-center mb-6">
-                <a href="https://wa.me/5562983160209?text=Olá!%20Gostaria%20de%20agendar%20uma%20demonstração%20online%20do%20Laser%20CO2%20Reversi" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   class="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-5 px-10 rounded-xl transition-all shadow-lg hover:scale-105 text-lg">
-                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                    </svg>
-                    Agendar Demonstração via WhatsApp
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-6">
+                <a href="https://wa.me/5562983160209" target="_blank" class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg hover:scale-105">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    WhatsApp: (62) 9 8316-0209
+                </a>
+                
+                <a href="https://instagram.com/alextecnologiamedica" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg hover:scale-105">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    @alextecnologiamedica
                 </a>
             </div>
             
-            <p class="text-sm text-purple-200 mb-4">
-                Demonstrações online gratuitas • Tire todas as suas dúvidas ao vivo
-            </p>
+            <p class="text-sm text-purple-200">Condições especiais de pré-lançamento por tempo limitado</p>
+        </div>
+    </div>
+
+    <script>
+        // Variáveis globais
+        let categoria = 'premium';
+        let procedimentosMes = 20;
+        let mix = {
+            facial: 40,
+            cirurgicos: 30,
+            outros: 30
+        };
+
+        const precos = {
+            popular: 2000,
+            premium: 3000,
+            luxo: 5000
+        };
+
+        const preciosMedios = {
+            cirurgicos: { popular: 3000, premium: 5000, luxo: 8000 },
+            outros: { popular: 2500, premium: 4000, luxo: 6500 }
+        };
+
+        const investimento = {
+            total: 199900,
+            entrada: 10000,
+            parcela: 5275
+        };
+
+        // Funções
+        function selecionarCategoria(cat) {
+            categoria = cat;
             
-            <a href="https://instagram.com/alextecnologiamedica" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="inline-flex items-center gap-2 text-purple-100 hover:text-white transition-all text-sm">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771
+            // Resetar botões
+            document.getElementById('btnPopular').className = 'py-3 px-4 rounded-lg font-semibold transition-all bg-blue-100 text-blue-700 hover:bg-blue-200';
+            document.getElementById('btnPremium').className = 'py-3 px-4 rounded-lg font-semibold transition-all bg-purple-100 text-purple-700 hover:bg-purple-200';
+            document.getElementById('btnLuxo').className = 'py-3 px-4 rounded-lg font-semibold transition-all bg-amber-100 text-amber-700 hover:bg-amber-200';
+            
+            // Destacar selecionado
+            if (cat === 'popular') {
+                document.getElementById('btnPopular').className = 'py-3 px-4 rounded-lg font-semibold transition-all bg-blue-600 text-white shadow-lg scale-105';
+            } else if (cat === 'premium') {
+                document.getElementById('btnPremium').className = 'py-3 px-4 rounded-lg font-semibold transition-all bg-purple-600 text-white shadow-lg scale-105';
+            } else {
+                document.getElementById('btnLuxo').className = 'py-3 px-4 rounded-lg font-semibold transition-all bg-amber-600 text-white shadow-lg scale-105';
+            }
+            
+            calcular();
+        }
+
+        function atualizarQtd(valor) {
+            procedimentosMes = parseInt(valor);
+            document.getElementById('txtQtd').textContent = procedimentosMes;
+            document.getElementById('txtBaseMes').textContent = procedimentosMes;
+            calcular();
+        }
+
+        function atualizarMix(tipo, valor) {
+            valor = parseInt(valor);
+            const resto = 100 - valor;
+            
+            if (tipo === 'facial') {
+                mix.facial = valor;
+                mix.cirurgicos = Math.round(resto * 0.5);
+                mix.outros = resto - mix.cirurgicos;
+            } else {
+                mix.cirurgicos = valor;
+                mix.facial = Math.round(resto * 0.5);
+                mix.outros = resto - mix.facial;
+            }
+            
+            // Atualizar sliders
+            document.getElementById('sliderFacial').value = mix.facial;
+            document.getElementById('sliderCirurgicos').value = mix.cirurgicos;
+            
+            // Atualizar textos
+            document.getElementById('percFacial').textContent = mix.facial + '%';
+            document.getElementById('percCirurgicos').textContent = mix.cirurgicos + '%';
+            document.getElementById('percOutros').textContent = mix.outros + '%';
+            
+            calcular();
+        }
+
+        function calcular() {
+            const qtdFacial = (procedimentosMes * mix.facial) / 100;
+            const qtdCirurgicos = (procedimentosMes * mix.cirurgicos) / 100;
+            const qtdOutros = (procedimentosMes * mix.outros) / 100;
+            
+            const fatFacial = qtdFacial * precos[categoria];
+            const fatCirurgicos = qtdCirurgicos * preciosMedios.cirurgicos[categoria];
+            const fatOutros = qtdOutros * preciosMedios.outros[categoria];
+            
+            const mensal = fatFacial + fatCirurgicos + fatOutros;
+            const anual = mensal * 12;
+            const lucro = mensal - investimento.parcela;
+            const mesesROI = lucro > 0 ? Math.ceil(investimento.total / lucro) : 0;
+            
+            // Atualizar interface
+            document.getElementById('txtMensal').textContent = formatarMoeda(mensal);
+            document.getElementById('txtAnual').textContent = formatarMoeda(anual);
+            document.getElementById('txtROI').textContent = mesesROI > 0 ? mesesROI + (mesesROI === 1 ? ' mês' : ' meses') : 'Calculando...';
+            document.getElementById('txtLucro').textContent = formatarMoeda(lucro);
+            
+            document.getElementById('txtDetFacial').textContent = formatarMoeda(fatFacial) + '/mês';
+            document.getElementById('txtDetCirurgicos').textContent = formatarMoeda(fatCirurgicos) + '/mês';
+            document.getElementById('txtDetOutros').textContent = formatarMoeda(fatOutros) + '/mês';
+        }
+
+        function formatarMoeda(valor) {
+            return valor.toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            });
+        }
+
+        function toggleTabela() {
+            const box = document.getElementById('boxTabela');
+            const btn = document.getElementById('btnTabela');
+            
+            if (box.classList.contains('hidden')) {
+                box.classList.remove('hidden');
+                btn.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg> Ocultar Tabela de Preços Completa';
+            } else {
+                box.classList.add('hidden');
+                btn.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg> Ver Tabela de Preços Completa';
+            }
+        }
+
+        // Inicializar
+        window.addEventListener('DOMContentLoaded', function() {
+            calcular();
+        });
+    </script>
+</body>
+</html>
