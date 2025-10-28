@@ -155,7 +155,7 @@ function calcular(){const qf=proc*mix.facial/100,qc=proc*mix.cirurgicos/100,qo=p
 
 function formatarMoeda(v){return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',minimumFractionDigits:0,maximumFractionDigits:0})}
 
-function iniciarContador(){const df=new Date('2025-10-24T23:59:59');function atualizar(){const d=df-new Date();if(d<0){['dias','horas','minutos','segundos'].forEach(x=>document.getElementById(x).textContent='00');return}document.getElementById('dias').textContent=String(Math.floor(d/864e5)).padStart(2,'0');document.getElementById('horas').textContent=String(Math.floor(d%864e5/36e5)).padStart(2,'0');document.getElementById('minutos').textContent=String(Math.floor(d%36e5/6e4)).padStart(2,'0');document.getElementById('segundos').textContent=String(Math.floor(d%6e4/1e3)).padStart(2,'0')}atualizar();setInterval(atualizar,1000)}
+function iniciarContador(){const df=new Date('2025-10-31T23:59:59');function atualizar(){const d=df-new Date();if(d<0){['dias','horas','minutos','segundos'].forEach(x=>document.getElementById(x).textContent='00');return}document.getElementById('dias').textContent=String(Math.floor(d/864e5)).padStart(2,'0');document.getElementById('horas').textContent=String(Math.floor(d%864e5/36e5)).padStart(2,'0');document.getElementById('minutos').textContent=String(Math.floor(d%36e5/6e4)).padStart(2,'0');document.getElementById('segundos').textContent=String(Math.floor(d%6e4/1e3)).padStart(2,'0')}atualizar();setInterval(atualizar,1000)}
 
 window.addEventListener('DOMContentLoaded',()=>{iniciarContador();calcular()});
 </script>
