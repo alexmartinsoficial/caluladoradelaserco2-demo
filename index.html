@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Seu Site</title>
+  <title>Calculadora de Ganhos - Laser CO₂</title>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLJ5P8ZQ9G"></script>
   <script>
@@ -11,20 +11,17 @@
     gtag('js', new Date());
     gtag('config', 'G-HLJ5P8ZQ9G');
   </script>
-</head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calculadora de Ganhos - Laser CO₂</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif}
-input[type="range"]{-webkit-appearance:none;appearance:none;width:100%;height:12px;border-radius:6px;background:#DDD6FE;outline:none}
-input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;background:#7C3AED;cursor:pointer;border-radius:50%;border:3px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.3)}
-input[type="range"]::-moz-range-thumb{width:24px;height:24px;background:#7C3AED;cursor:pointer;border-radius:50%;border:3px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.3)}
-.hidden{display:none}
-@keyframes pulse-slow{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
-.animate-pulse-slow{animation:pulse-slow 3s cubic-bezier(0.4,0,0.6,1) infinite}
-</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif}
+    input[type="range"]{-webkit-appearance:none;appearance:none;width:100%;height:12px;border-radius:6px;background:#DDD6FE;outline:none}
+    input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;background:#7C3AED;cursor:pointer;border-radius:50%;border:3px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.3)}
+    input[type="range"]::-moz-range-thumb{width:24px;height:24px;background:#7C3AED;cursor:pointer;border-radius:50%;border:3px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.3)}
+    .hidden{display:none}
+    @keyframes pulse-slow{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
+    .animate-pulse-slow{animation:pulse-slow 3s cubic-bezier(0.4,0,0.6,1) infinite}
+  </style>
 </head>
 <body class="bg-gradient-to-br from-purple-50 to-blue-50 min-h-screen p-6">
 <div class="max-w-6xl mx-auto">
@@ -154,7 +151,7 @@ WhatsApp
 
 <script>
 let cat='premium',proc=20,mix={facial:40,cirurgicos:30,outros:30};
-const p={popular:2000,premium:3000,luxo:5000},pm={cirurgicos:{popular:3000,premium:5000,luxo:8000},outros:{popular:2500,premium:4000,luxo:6500}},inv={total:229900,parcela:9.162.50};
+const p={popular:2000,premium:3000,luxo:5000},pm={cirurgicos:{popular:3000,premium:5000,luxo:8000},outros:{popular:2500,premium:4000,luxo:6500}},inv={total:229900,parcela:9162.50};
 
 function selecionarCategoria(c){cat=c;['Popular','Premium','Luxo'].forEach(x=>{document.getElementById('btn'+x).className='py-3 px-4 rounded-lg font-semibold transition-all bg-'+(x.toLowerCase()==c?x=='Premium'?'purple-600 text-white shadow-lg scale-105':x=='Popular'?'blue-600 text-white shadow-lg scale-105':'amber-600 text-white shadow-lg scale-105':x=='Premium'?'purple-100 text-purple-700 hover:bg-purple-200':x=='Popular'?'blue-100 text-blue-700 hover:bg-blue-200':'amber-100 text-amber-700 hover:bg-amber-200')});calcular()}
 
