@@ -45,10 +45,73 @@
 
 <div class="mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
 <p class="text-xs text-gray-500 mb-2">Exemplos de categoria - Facial completo:</p>
-<div class="grid grid-cols-3 gap-3 text-center">
-<div><div class="text-xs font-semibold text-blue-600 mb-1">POPULAR</div><div class="text-lg font-bold text-blue-700">R$ 2.000</div></div>
-<div><div class="text-xs font-semibold text-purple-600 mb-1">PREMIUM</div><div class="text-lg font-bold text-purple-700">R$ 3.000</div></div>
-<div><div class="text-xs font-semibold text-amber-600 mb-1">LUXO</div><div class="text-lg font-bold text-amber-700">R$ 5.000</div></div>
+<div class="grid grid-cols-3 gap-2 sm:gap-3 text-center">
+<div><div class="text-xs font-semibold text-blue-600 mb-1">POPULAR</div><div class="text-base sm:text-lg font-bold text-blue-700">R$ 2.000</div><div class="text-xs text-gray-500 mt-1">Tratamento básico</div></div>
+<div><div class="text-xs font-semibold text-purple-600 mb-1">PREMIUM</div><div class="text-base sm:text-lg font-bold text-purple-700">R$ 3.000</div><div class="text-xs text-gray-500 mt-1">Experiência diferenciada</div></div>
+<div><div class="text-xs font-semibold text-amber-600 mb-1">LUXO</div><div class="text-base sm:text-lg font-bold text-amber-700">R$ 5.000</div><div class="text-xs text-gray-500 mt-1">Excelência exclusiva</div></div>
+</div>
+</div>
+
+<div class="mb-6 text-center">
+<button onclick="toggleTabelas()" class="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-2 px-5 rounded-lg transition-all border border-gray-300">
+📋 <span id="btn-tabela-text">Ver</span> Tabela de Preços Completa
+</button>
+</div>
+
+<div id="tabelasPrecos" class="hidden mb-6 p-4 sm:p-6 bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl border-2 border-purple-200">
+<h3 class="text-xl font-bold text-gray-800 mb-4">Tabela de Sugestão de Preços</h3>
+
+<div class="mb-6 overflow-x-auto">
+<h4 class="text-lg font-bold text-purple-700 mb-3">🔹 Procedimentos Não Cirúrgicos</h4>
+<table class="w-full text-xs sm:text-sm bg-white rounded-lg overflow-hidden">
+<thead class="bg-purple-100">
+<tr>
+<th class="text-left p-2 sm:p-3 font-semibold">Protocolo</th>
+<th class="text-right p-2 sm:p-3 font-semibold">Popular</th>
+<th class="text-right p-2 sm:p-3 font-semibold">Premium</th>
+<th class="text-right p-2 sm:p-3 font-semibold">Luxo</th>
+</tr>
+</thead>
+<tbody class="divide-y">
+<tr><td class="p-2 sm:p-3">Área da boca</td><td class="text-right p-2 sm:p-3">R$ 900</td><td class="text-right p-2 sm:p-3">R$ 1.200</td><td class="text-right p-2 sm:p-3">R$ 1.600</td></tr>
+<tr class="bg-gray-50"><td class="p-2 sm:p-3">Pescoço</td><td class="text-right p-2 sm:p-3">R$ 1.000</td><td class="text-right p-2 sm:p-3">R$ 2.500</td><td class="text-right p-2 sm:p-3">R$ 4.000</td></tr>
+<tr><td class="p-2 sm:p-3">Mãos</td><td class="text-right p-2 sm:p-3">R$ 1.100</td><td class="text-right p-2 sm:p-3">R$ 1.500</td><td class="text-right p-2 sm:p-3">R$ 1.900</td></tr>
+<tr class="bg-gray-50"><td class="p-2 sm:p-3">Colo</td><td class="text-right p-2 sm:p-3">R$ 1.500</td><td class="text-right p-2 sm:p-3">R$ 1.900</td><td class="text-right p-2 sm:p-3">R$ 2.300</td></tr>
+<tr><td class="p-2 sm:p-3">Bumbum de Pêssego</td><td class="text-right p-2 sm:p-3">R$ 1.700</td><td class="text-right p-2 sm:p-3">R$ 2.300</td><td class="text-right p-2 sm:p-3">R$ 3.000</td></tr>
+<tr class="bg-gray-50"><td class="p-2 sm:p-3">Olhar Diamante</td><td class="text-right p-2 sm:p-3">R$ 1.800</td><td class="text-right p-2 sm:p-3">R$ 2.500</td><td class="text-right p-2 sm:p-3">R$ 5.000</td></tr>
+<tr><td class="p-2 sm:p-3 font-semibold">Face Sublime</td><td class="text-right p-2 sm:p-3 font-semibold">R$ 2.000</td><td class="text-right p-2 sm:p-3 font-semibold">R$ 3.000</td><td class="text-right p-2 sm:p-3 font-semibold">R$ 5.000</td></tr>
+<tr class="bg-gray-50"><td class="p-2 sm:p-3">Lift Premium</td><td class="text-right p-2 sm:p-3">R$ 3.000</td><td class="text-right p-2 sm:p-3">R$ 5.500</td><td class="text-right p-2 sm:p-3">R$ 8.000</td></tr>
+<tr><td class="p-2 sm:p-3">Elegance Total</td><td class="text-right p-2 sm:p-3">R$ 4.000</td><td class="text-right p-2 sm:p-3">R$ 7.000</td><td class="text-right p-2 sm:p-3">R$ 10.000</td></tr>
+<tr class="bg-gray-50"><td class="p-2 sm:p-3">Skin Perfect</td><td class="text-right p-2 sm:p-3">R$ 4.200</td><td class="text-right p-2 sm:p-3">R$ 7.000</td><td class="text-right p-2 sm:p-3">R$ 10.000</td></tr>
+<tr><td class="p-2 sm:p-3">Abdômen Platinum</td><td class="text-right p-2 sm:p-3">R$ 4.000</td><td class="text-right p-2 sm:p-3">R$ 6.000</td><td class="text-right p-2 sm:p-3">R$ 12.000</td></tr>
+<tr class="bg-gray-50"><td class="p-2 sm:p-3 font-semibold">Resurfacing</td><td class="text-right p-2 sm:p-3 font-semibold">R$ 5.000</td><td class="text-right p-2 sm:p-3 font-semibold">R$ 7.000</td><td class="text-right p-2 sm:p-3 font-semibold">R$ 10.000</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="overflow-x-auto">
+<h4 class="text-lg font-bold text-blue-700 mb-3">🔹 Procedimentos Cirúrgicos</h4>
+<table class="w-full text-xs sm:text-sm bg-white rounded-lg overflow-hidden">
+<thead class="bg-blue-100">
+<tr>
+<th class="text-left p-2 sm:p-3 font-semibold">Procedimento</th>
+<th class="text-right p-2 sm:p-3 font-semibold">Popular</th>
+<th class="text-right p-2 sm:p-3 font-semibold">Premium</th>
+<th class="text-right p-2 sm:p-3 font-semibold">Luxo</th>
+</tr>
+</thead>
+<tbody class="divide-y">
+<tr><td class="p-2 sm:p-3">Lesões benignas pequenas</td><td class="text-right p-2 sm:p-3">R$ 800</td><td class="text-right p-2 sm:p-3">R$ 1.500</td><td class="text-right p-2 sm:p-3">R$ 2.500</td></tr>
+<tr class="bg-gray-50"><td class="p-2 sm:p-3">Ressecção de pintas</td><td class="text-right p-2 sm:p-3">R$ 800</td><td class="text-right p-2 sm:p-3">R$ 1.200</td><td class="text-right p-2 sm:p-3">R$ 2.000</td></tr>
+<tr><td class="p-2 sm:p-3">Siringomas e mílias</td><td class="text-right p-2 sm:p-3">R$ 1.500</td><td class="text-right p-2 sm:p-3">R$ 2.000</td><td class="text-right p-2 sm:p-3">R$ 3.000</td></tr>
+<tr class="bg-gray-50"><td class="p-2 sm:p-3">Exérese de xantelasmas</td><td class="text-right p-2 sm:p-3">R$ 2.500</td><td class="text-right p-2 sm:p-3">R$ 4.000</td><td class="text-right p-2 sm:p-3">R$ 6.000</td></tr>
+<tr><td class="p-2 sm:p-3">Excisão de cicatrizes</td><td class="text-right p-2 sm:p-3">R$ 2.500</td><td class="text-right p-2 sm:p-3">R$ 4.000</td><td class="text-right p-2 sm:p-3">R$ 6.000</td></tr>
+<tr class="bg-gray-50"><td class="p-2 sm:p-3">Vaporização de quelóides</td><td class="text-right p-2 sm:p-3">R$ 2.500</td><td class="text-right p-2 sm:p-3">R$ 4.000</td><td class="text-right p-2 sm:p-3">R$ 6.000</td></tr>
+<tr><td class="p-2 sm:p-3">Laser intravaginal</td><td class="text-right p-2 sm:p-3">R$ 5.000</td><td class="text-right p-2 sm:p-3">R$ 8.000</td><td class="text-right p-2 sm:p-3">R$ 12.000</td></tr>
+<tr class="bg-gray-50"><td class="p-2 sm:p-3">Blefaroplastia</td><td class="text-right p-2 sm:p-3">R$ 6.000</td><td class="text-right p-2 sm:p-3">R$ 8.500</td><td class="text-right p-2 sm:p-3">R$ 12.000</td></tr>
+<tr><td class="p-2 sm:p-3">Ninfoplastia</td><td class="text-right p-2 sm:p-3">R$ 8.000</td><td class="text-right p-2 sm:p-3">R$ 12.000</td><td class="text-right p-2 sm:p-3">R$ 20.000</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -162,6 +225,8 @@ function atualizarMix(t,v){v=parseInt(v);const r=100-v;if(t=='facial'){mix.facia
 function calcular(){const qf=proc*mix.facial/100,qc=proc*mix.cirurgicos/100,qo=proc*mix.outros/100,ff=qf*p[cat],fc=qc*pm.cirurgicos[cat],fo=qo*pm.outros[cat],m=ff+fc+fo,a=m*12,l=m-inv.parcela,roi=l>0?Math.ceil(inv.total/l):0;document.getElementById('txtMensal').textContent=formatarMoeda(m);document.getElementById('txtAnual').textContent=formatarMoeda(a);document.getElementById('txtROI').textContent=roi>0?roi+(roi==1?' mês':' meses'):'Calculando...';document.getElementById('txtLucro').textContent=formatarMoeda(l)}
 
 function formatarMoeda(v){return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',minimumFractionDigits:0,maximumFractionDigits:0})}
+
+function toggleTabelas(){const el=document.getElementById('tabelasPrecos'),btn=document.getElementById('btn-tabela-text');el.classList.toggle('hidden');btn.textContent=el.classList.contains('hidden')?'Ver':'Ocultar'}
 
 function iniciarContador(){const df=new Date('2025-11-10T23:59:59');function atualizar(){const d=df-new Date();if(d<0){['dias','horas','minutos','segundos'].forEach(x=>document.getElementById(x).textContent='00');return}document.getElementById('dias').textContent=String(Math.floor(d/864e5)).padStart(2,'0');document.getElementById('horas').textContent=String(Math.floor(d%864e5/36e5)).padStart(2,'0');document.getElementById('minutos').textContent=String(Math.floor(d%36e5/6e4)).padStart(2,'0');document.getElementById('segundos').textContent=String(Math.floor(d%6e4/1e3)).padStart(2,'0')}atualizar();setInterval(atualizar,1000)}
 
