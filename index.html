@@ -228,7 +228,7 @@ function formatarMoeda(v){return v.toLocaleString('pt-BR',{style:'currency',curr
 
 function toggleTabelas(){const el=document.getElementById('tabelasPrecos'),btn=document.getElementById('btn-tabela-text');el.classList.toggle('hidden');btn.textContent=el.classList.contains('hidden')?'Ver':'Ocultar'}
 
-function iniciarContador(){const df=new Date('2025-11-10T23:59:59');function atualizar(){const d=df-new Date();if(d<0){['dias','horas','minutos','segundos'].forEach(x=>document.getElementById(x).textContent='00');return}document.getElementById('dias').textContent=String(Math.floor(d/864e5)).padStart(2,'0');document.getElementById('horas').textContent=String(Math.floor(d%864e5/36e5)).padStart(2,'0');document.getElementById('minutos').textContent=String(Math.floor(d%36e5/6e4)).padStart(2,'0');document.getElementById('segundos').textContent=String(Math.floor(d%6e4/1e3)).padStart(2,'0')}atualizar();setInterval(atualizar,1000)}
+function iniciarContador(){const df=new Date('2025-11-28T23:59:59');function atualizar(){const d=df-new Date();if(d<0){['dias','horas','minutos','segundos'].forEach(x=>document.getElementById(x).textContent='00');return}document.getElementById('dias').textContent=String(Math.floor(d/864e5)).padStart(2,'0');document.getElementById('horas').textContent=String(Math.floor(d%864e5/36e5)).padStart(2,'0');document.getElementById('minutos').textContent=String(Math.floor(d%36e5/6e4)).padStart(2,'0');document.getElementById('segundos').textContent=String(Math.floor(d%6e4/1e3)).padStart(2,'0')}atualizar();setInterval(atualizar,1000)}
 
 window.addEventListener('DOMContentLoaded',()=>{iniciarContador();calcular()});
 </script>
