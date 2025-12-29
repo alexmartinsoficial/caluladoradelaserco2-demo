@@ -90,59 +90,46 @@
     <div class="p-8">
       <div class="text-center mb-6">
         <h3 class="text-2xl font-bold text-gray-800 mb-3">
-          Receba SUA SIMULAÇÃO DE ROI PERSONALIZADA
+          Restam apenas <span class="text-red-600 text-3xl font-black" id="popupUnidades">5</span> unidades
         </h3>
-        <p class="text-lg text-gray-600 mb-2">
-          Direto no seu WhatsApp + BÔNUS EXCLUSIVO:
+        <p class="text-lg text-gray-600 mb-4">
+          para entrega em <span class="font-bold text-purple-600">FEVEREIRO/2026</span>
         </p>
-        <div class="bg-gradient-to-r from-amber-100 to-amber-200 border-2 border-amber-400 rounded-xl p-4 mt-4">
+        
+        <div class="bg-gray-200 rounded-full h-6 mb-2 overflow-hidden">
+          <div id="barraEstoque" class="bg-gradient-to-r from-red-500 to-red-600 h-full transition-all duration-500" style="width: 60%"></div>
+        </div>
+        <p class="text-sm text-gray-500 mb-4">
+          <span class="font-semibold text-gray-700">7 unidades já vendidas</span> de 12 disponíveis no lote
+        </p>
+        
+        <div class="bg-amber-50 border-2 border-amber-300 rounded-xl p-4 mb-6">
+          <p class="text-amber-900 font-semibold flex items-center justify-center gap-2">
+            <span class="text-2xl">⚠️</span>
+            Próximo lote somente em ABRIL/2026
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-r from-purple-50 to-blue-50 border-2 border-purple-200 rounded-xl p-4 mb-6">
           <div class="flex items-center justify-center gap-3 mb-2">
             <span class="text-3xl">🎁</span>
-            <span class="font-bold text-amber-900 text-lg">BÔNUS ESPECIAL</span>
+            <span class="font-bold text-purple-900 text-lg">BÔNUS INCLUSOS</span>
           </div>
-          <p class="text-amber-900 font-semibold">
+          <p class="text-purple-900 font-semibold text-sm">
             PDF Exclusivo: "Guia Completo de Precificação para Laser CO₂"
-          </p>
-          <p class="text-amber-800 text-sm mt-1">
-            Como precificar cada procedimento e maximizar seu lucro
           </p>
         </div>
       </div>
       
-      <form id="popupForm" class="space-y-4">
-        <div>
-          <label class="block text-sm font-semibold text-gray-700 mb-2">Nome Completo *</label>
-          <input type="text" id="popupNome" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition-all" placeholder="Seu nome">
-        </div>
-        
-        <div>
-          <label class="block text-sm font-semibold text-gray-700 mb-2">WhatsApp *</label>
-          <input type="tel" id="popupWhatsapp" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition-all" placeholder="(00) 00000-0000">
-        </div>
-        
-        <div>
-          <label class="block text-sm font-semibold text-gray-700 mb-2">Tipo de Clínica</label>
-          <select id="popupClinica" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition-all">
-            <option value="">Selecione...</option>
-            <option value="dermatologia">Dermatologia</option>
-            <option value="estetica">Estética</option>
-            <option value="ginecologia">Ginecologia</option>
-            <option value="cirurgia-plastica">Cirurgia Plástica</option>
-            <option value="outro">Outro</option>
-          </select>
-        </div>
-        
-        <button type="submit" class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 flex items-center justify-center gap-3">
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          QUERO RECEBER AGORA NO WHATSAPP
-        </button>
-      </form>
+      <button onclick="enviarWhatsAppPopup()" class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-5 px-8 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 flex items-center justify-center gap-3">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        GARANTIR MINHA VAGA NO LOTE DE FEVEREIRO
+      </button>
       
-      <div class="mt-6 text-center">
-        <div class="flex items-center justify-center gap-2 text-sm text-gray-500">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
-          Seus dados estão seguros conosco
-        </div>
+      <div class="mt-4 text-center">
+        <p class="text-xs text-gray-500">
+          Receba sua simulação de ROI personalizada + Guia de Precificação
+        </p>
       </div>
     </div>
   </div>
@@ -270,12 +257,27 @@
 </div>
 
 <div class="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl shadow-2xl p-6 mb-6 text-white">
-<h3 class="text-2xl font-bold text-center mb-4">⏰ Condições Especiais Terminam em:</h3>
-<div class="flex justify-center gap-4 mb-4">
-<div class="bg-white bg-opacity-20 rounded-lg px-6 py-4"><div class="text-4xl font-bold" id="dias">00</div><div class="text-xs uppercase mt-1">Dias</div></div>
-<div class="bg-white bg-opacity-20 rounded-lg px-6 py-4"><div class="text-4xl font-bold" id="horas">00</div><div class="text-xs uppercase mt-1">Horas</div></div>
-<div class="bg-white bg-opacity-20 rounded-lg px-6 py-4"><div class="text-4xl font-bold" id="minutos">00</div><div class="text-xs uppercase mt-1">Min</div></div>
-<div class="bg-white bg-opacity-20 rounded-lg px-6 py-4"><div class="text-4xl font-bold" id="segundos">00</div><div class="text-xs uppercase mt-1">Seg</div></div>
+<div class="text-center">
+<h3 class="text-2xl font-bold mb-4">📦 Últimas Unidades do Lote de Fevereiro</h3>
+<div class="bg-white bg-opacity-20 rounded-2xl p-6 mb-4">
+<div class="text-6xl font-black mb-2" id="unidadesRestantes">5</div>
+<div class="text-xl font-semibold mb-4">unidades restantes</div>
+<div class="bg-gray-200 rounded-full h-8 overflow-hidden mb-3">
+<div id="barraEstoquePrincipal" class="bg-gradient-to-r from-amber-400 to-amber-500 h-full transition-all duration-1000 flex items-center justify-end pr-3" style="width: 60%">
+<span class="text-xs font-bold text-white drop-shadow-lg">60%</span>
+</div>
+</div>
+<div class="text-sm text-white">
+<span class="font-bold">7 unidades já vendidas</span> de 12 disponíveis
+</div>
+</div>
+<div class="flex items-center justify-center gap-3 text-lg">
+<span class="text-3xl">⚠️</span>
+<div class="text-left">
+<div class="font-bold">Próximo lote somente em ABRIL/2026</div>
+<div class="text-sm text-red-200">Garanta sua entrega para FEVEREIRO</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -364,6 +366,7 @@ setTimeout(() => {
 function mostrarPopup() {
   if (popupShown) return;
   popupShown = true;
+  atualizarEstoquePopup();
   document.getElementById('exitPopup').classList.add('show');
   document.body.style.overflow = 'hidden';
 }
@@ -380,36 +383,87 @@ document.getElementById('exitPopup').addEventListener('click', (e) => {
   }
 });
 
-// Handle popup form submission
-document.getElementById('popupForm').addEventListener('submit', (e) => {
-  e.preventDefault();
+// Sistema de contagem de estoque
+function calcularUnidadesRestantes() {
+  const dataInicio = new Date('2025-12-29T00:00:00');
+  const dataFim = new Date('2026-01-30T23:59:59');
+  const agora = new Date();
   
-  const nome = document.getElementById('popupNome').value;
-  const whatsapp = document.getElementById('popupWhatsapp').value;
-  const clinica = document.getElementById('popupClinica').value;
+  if (agora >= dataFim) return 0;
+  if (agora <= dataInicio) return 5;
   
-  // Get current simulation data
+  const totalDias = (dataFim - dataInicio) / (1000 * 60 * 60 * 24);
+  const diasPassados = (agora - dataInicio) / (1000 * 60 * 60 * 24);
+  const percentualPassado = diasPassados / totalDias;
+  
+  // Começa com 5 e vai até 0
+  const unidades = Math.max(0, Math.ceil(5 - (percentualPassado * 5)));
+  return unidades;
+}
+
+function atualizarEstoque() {
+  const unidades = calcularUnidadesRestantes();
+  const vendidas = 7 + (5 - unidades);
+  const percentual = ((7 + (5 - unidades)) / 12) * 100;
+  
+  document.getElementById('unidadesRestantes').textContent = unidades;
+  document.getElementById('barraEstoquePrincipal').style.width = percentual + '%';
+  document.getElementById('barraEstoquePrincipal').querySelector('span').textContent = Math.round(percentual) + '%';
+  
+  // Atualizar texto de unidades vendidas
+  const textoVendidas = document.querySelector('#barraEstoquePrincipal').parentElement.nextElementSibling;
+  if (textoVendidas) {
+    textoVendidas.innerHTML = `<span class="font-bold">${vendidas} unidades já vendidas</span> de 12 disponíveis`;
+  }
+  
+  // Mensagem especial quando restar apenas 1
+  if (unidades === 1) {
+    document.querySelector('.bg-gradient-to-r.from-red-600 h3').innerHTML = '🚨 ÚLTIMA UNIDADE DO LOTE DE FEVEREIRO!';
+  } else if (unidades === 0) {
+    document.querySelector('.bg-gradient-to-r.from-red-600 h3').innerHTML = '❌ LOTE DE FEVEREIRO ESGOTADO';
+  }
+}
+
+function atualizarEstoquePopup() {
+  const unidades = calcularUnidadesRestantes();
+  const vendidas = 7 + (5 - unidades);
+  const percentual = ((7 + (5 - unidades)) / 12) * 100;
+  
+  const popupUnidades = document.getElementById('popupUnidades');
+  const barraEstoque = document.getElementById('barraEstoque');
+  
+  if (popupUnidades) {
+    popupUnidades.textContent = unidades;
+  }
+  
+  if (barraEstoque) {
+    barraEstoque.style.width = percentual + '%';
+  }
+  
+  // Atualizar texto de vendidas no popup
+  const textoVendidasPopup = barraEstoque.parentElement.nextElementSibling;
+  if (textoVendidasPopup) {
+    textoVendidasPopup.innerHTML = `<span class="font-semibold text-gray-700">${vendidas} unidades já vendidas</span> de 12 disponíveis no lote`;
+  }
+}
+
+function enviarWhatsAppPopup() {
+  const unidades = calcularUnidadesRestantes();
   const mensal = document.getElementById('txtMensal').textContent;
   const anual = document.getElementById('txtAnual').textContent;
   const roi = document.getElementById('txtROI').textContent;
   
-  // Build WhatsApp message
-  let mensagem = `Olá! Quero receber minha simulação de ROI personalizada do Laser CO₂ Reversi%0A%0A`;
-  mensagem += `👤 Nome: ${encodeURIComponent(nome)}%0A`;
-  mensagem += `📱 WhatsApp: ${encodeURIComponent(whatsapp)}%0A`;
-  if (clinica) mensagem += `🏥 Tipo de Clínica: ${encodeURIComponent(clinica)}%0A`;
-  mensagem += `%0A📊 Minha Simulação:%0A`;
+  let mensagem = `Olá! Quero garantir minha vaga no lote de FEVEREIRO!%0A%0A`;
+  mensagem += `📦 Vi que restam apenas ${unidades} unidade${unidades !== 1 ? 's' : ''}!%0A%0A`;
+  mensagem += `📊 Minha Simulação de ROI:%0A`;
   mensagem += `💰 Faturamento Mensal: ${encodeURIComponent(mensal)}%0A`;
   mensagem += `📈 Projeção Anual: ${encodeURIComponent(anual)}%0A`;
   mensagem += `⏱️ ROI: ${encodeURIComponent(roi)}%0A`;
   mensagem += `%0A🎁 Quero receber também o PDF: "Guia Completo de Precificação para Laser CO₂"`;
   
-  // Open WhatsApp
   window.open(`https://wa.me/5562983160209?text=${mensagem}`, '_blank');
-  
-  // Close popup
   fecharPopup();
-});
+}
 
 function selecionarCategoria(c){cat=c;['Popular','Premium','Luxo'].forEach(x=>{document.getElementById('btn'+x).className='py-3 px-4 rounded-lg font-semibold transition-all bg-'+(x.toLowerCase()==c?x=='Premium'?'purple-600 text-white shadow-lg scale-105':x=='Popular'?'blue-600 text-white shadow-lg scale-105':'amber-600 text-white shadow-lg scale-105':x=='Premium'?'purple-100 text-purple-700 hover:bg-purple-200':x=='Popular'?'blue-100 text-blue-700 hover:bg-blue-200':'amber-100 text-amber-700 hover:bg-amber-200')});calcular()}
 
@@ -423,9 +477,11 @@ function formatarMoeda(v){return v.toLocaleString('pt-BR',{style:'currency',curr
 
 function toggleTabelas(){const el=document.getElementById('tabelasPrecos'),btn=document.getElementById('btn-tabela-text');el.classList.toggle('hidden');btn.textContent=el.classList.contains('hidden')?'Ver':'Ocultar'}
 
-function iniciarContador(){const df=new Date('2026-01-31T23:59:59');function atualizar(){const d=df-new Date();if(d<0){['dias','horas','minutos','segundos'].forEach(x=>document.getElementById(x).textContent='00');return}document.getElementById('dias').textContent=String(Math.floor(d/864e5)).padStart(2,'0');document.getElementById('horas').textContent=String(Math.floor(d%864e5/36e5)).padStart(2,'0');document.getElementById('minutos').textContent=String(Math.floor(d%36e5/6e4)).padStart(2,'0');document.getElementById('segundos').textContent=String(Math.floor(d%6e4/1e3)).padStart(2,'0')}atualizar();setInterval(atualizar,1000)}
-
-window.addEventListener('DOMContentLoaded',()=>{iniciarContador();calcular()});
+window.addEventListener('DOMContentLoaded',()=>{
+  atualizarEstoque();
+  setInterval(atualizarEstoque, 60000); // Atualiza a cada 1 minuto
+  calcular();
+});
 </script>
 </body>
 </html>
